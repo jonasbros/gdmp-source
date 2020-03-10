@@ -1,38 +1,221 @@
 .App {
-  text-align: center;
+    height: 100%;
+    background-color: deepskyblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.intro__container {
+    height: 100%;
+    margin-top: 0;
+} 
+
+.intro__inner {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 18px;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.intro__text {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 5px 40px 20px;
+}
+
+.intro__text h1 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+/* PLAYER */
+
+.player__container {
+    height: 100%;
+    text-align: center;
+    margin-top: 0;
+}
+
+.player__inner {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    height: 531px;
+    width: 552px;
+}
+
+.player__player {
+    height: 29%;
+    margin-bottom: 1%;
+    padding: 15px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.player__header {
+    position: relative;
+}
+
+
+.player__header p {
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.player__prevnext {
+    position: absolute;
+    top: 50%;
+    font-size: 26px;
+    cursor: pointer;
+
+}
+
+.player__prev-btn {
+    left: 0;
+}
+
+.player__next-btn {
+    right: 0;
+}
+
+.player__player-controls {    
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto 0 auto;
+}
+
+.player__player-controls div {
+    margin: auto;
+}
+
+.play-pause__btn,
+.repeat__btn,
+.shuffle__btn {
+    cursor: pointer;
+    flex: 1 0 6.66%;
+}
+
+
+.volume__control, .seeker__control {
+    cursor: pointer;
+}
+
+.volume__control {
+    flex: 1 0 17%;
+    padding-right: 5px; 
+}
+
+.seeker__control {
+    cursor: pointer;
+    flex: 1 0 57%;
+    padding-left: 5px;
+}
+
+.volume__control input, .seeker__control input {
+    cursor: pointer;
+    width: 100%;
+    vertical-align: middle;
+}
+
+i {
+    color: grey;
+}
+
+i:hover {
+    color: hsl(204, 86%, 53%);
+}
+
+.player__playlist {
+    height: 70%;
+}
+
+.player__playlist-inner {
+    height: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    overflow: auto;
+}
+
+.player__playlist-inner p {
+    padding: 8px;
+    border-bottom: 1px solid lightgrey;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.player__playlist-inner p:hover {
+    background-color: hsl(204, 86%, 53%) !important; 
+    color: whitesmoke;
+}
+
+
+.player__player h3 {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/*  */
+.is-playing {
+    background-color: hsl(204, 86%, 53%);
+    color: whitesmoke;
+}
+
+/* RANGE SLIDERS */
+
+input[type="range"] {
+  display: block;
+  -webkit-appearance: none;
+  background-color: #bdc3c7;
+  /* width: 300px; */
+  height: 5px;
+  border-radius: 5px;
+  margin: 0 auto;
+  outline: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #e74c3c;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}​
+  input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: white;
+    border: 2px solid #e74c3c;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.2);
   }
-  to {
-    transform: rotate(360deg);
+
+  .loader-gif {
+      display: none;
+      height: 165px;
+      width: 220px;
+      margin: 5px auto;
   }
+  
+  .loader-gif img {
+      height: 100%;
+      width: 100%;
+  }
+
+  .loader-gif.active {
+      display: block;
+  }
+
+/*  */
+
+@media only screen and (max-width: 765px) {
+    .player__inner {
+        width: 100%;
+        height: 100%;
+    }
 }
